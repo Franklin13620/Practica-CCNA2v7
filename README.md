@@ -135,7 +135,7 @@ dentro del rango.
 computadores.
 
 ### Topologia de la Red.
-![alt text](https://github.com/Franklin13620/Practica-CCNA2v7/master/assets/topologia.png)
+![alt text](https://github.com/Franklin13620/Practica-CCNA2v7/blob/master/assets/topologia.png)
 
 
 
