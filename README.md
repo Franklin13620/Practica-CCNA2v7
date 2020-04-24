@@ -26,8 +26,9 @@ las vlan de datos y desactivando el protocolo DTP.
 - Deshabilite los puertos no utilizados.
 
 - Configure la interfaz SVI para la vlan de Soporte de acuerdo a lo mostrado en el cuadro
-siguiente:
- | | **SW1** | **SW2** | **SW3** |
+  siguiente:
+
+ | | SW1  | SW2 | SW3 |
  | :--: | :--: | :---: |  :--:  |
  |**Direccion SVI** | 10.10.14.3/28 | 10.10.14.4/28 | 10.10.14.5/28 |
 
@@ -53,6 +54,7 @@ reenvío al iniciar el switch.
 ##### **Configuración de EtherChannels en SW1, SW2 y SW3.**
 - Utilice la siguiente tabla para formar EtherChannels en los puertos de switch indicados en
 la topología:
+
  | Port-Channel | Protocolo |
  | :--: | :--: |
  | **1** | **LACP** |
