@@ -29,7 +29,7 @@ las vlan de datos y desactivando el protocolo DTP.
 siguiente:
 | **SW1** | **SW2** | **SW3** |
 | :---: | :---: | :---: | 
-|Direccion SVI | 10.10.14.3/28 | 10.10.14.4/28 | 10.10.14.5/28
+|**Direccion SVI** | 10.10.14.3/28 | 10.10.14.4/28 | 10.10.14.5/28 |
 
 - Configure como Gateway por defecto la dirección 10.10.14.14
 
@@ -55,6 +55,9 @@ reenvío al iniciar el switch.
 la topología:
 | Port-Channel | Protocolo |
 | :--: | :--: |
+| **1** | **LACP** |
+| **2**| **LACP** |
+| **3** | **PAgP** |
 
 - Revise que las interfaces port-channel estén configuradas como troncales.
 
@@ -78,7 +81,7 @@ la topología:
    - Asigne la primera dirección IP del rango:
      | | VLAN 4 | VLAN 9 | VLAN 13 | VLAN 14 |
      | :--: | :--:   | :--:   | :--:    | :--:    |
-     | Direccion IP | 10.10.4.1/24 | 10.10.9.1/25 | 10.10.13.1/26 | 10.10.14.1/28 |
+     | **Direccion IP** | 10.10.4.1/24 | 10.10.9.1/25 | 10.10.13.1/26 | 10.10.14.1/28 |
 
 3. Aplique enrutamiento de VLAN en el switch capa 3 BR2. Habilite y configure las SVI con
      los siguientes requisitos:
@@ -86,7 +89,7 @@ la topología:
    - Asigne en BR2 la segunda dirección IP del rango:
      | | VLAN 4 | VLAN 9 | VLAN 13 | VLAN 14 |
      | :--: | :--:   | :--:   | :--:    | :--:    |
-     | Direccion ip | 10.10.4.2/24 | 10.10.9.2/25 | 10.10.13.2/26 | 10.10.14.2/28 |
+     | **Direccion ip** | 10.10.4.2/24 | 10.10.9.2/25 | 10.10.13.2/26 | 10.10.14.2/28 |
 
 4. Direccione las interfaces seriales, gigaethernet y loopback de acuerdo a lo indicado en la
      siguiente tabla:
@@ -131,6 +134,8 @@ dentro del rango.
 - Todos los computadores deben poder acceder al servidor Web y hacer ping a los otros
 computadores.
 
+### Topologia de la Red.
+![alt text](https://github.com/Franklin13620/Practica-CCNA2v7/master/assets/topologia.png)
 
 
 
