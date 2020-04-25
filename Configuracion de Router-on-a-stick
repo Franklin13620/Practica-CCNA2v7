@@ -1,0 +1,29 @@
+= BR1
+ena
+conf ter
+int gi0/0
+no shu
+
+int gi0/0.4
+encapsulation dot1q 4
+ip add 10.10.4.1 255.255.255.0
+no shu
+exit
+
+int gi0/0.9
+encapsulation dot1q 9
+ip add 10.10.9.1 255.255.255.128
+no shu
+exit
+
+int gi0/0.13
+encapsulation dot1q 13
+ip add 10.10.13.1 255.255.255.192
+no shu
+exit
+
+int gi0/0.14
+encapsulation dot1q 14
+ip add 10.10.14.1 255.255.255.240
+no shu
+exit

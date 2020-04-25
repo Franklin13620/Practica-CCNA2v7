@@ -1,0 +1,123 @@
+// SW1, SW2, SW3, BR2
+ena
+conf ter
+vlan 4
+name Gerencia
+exit
+vlan 9 
+name Contabilidad
+exit
+vlan 13
+name Ingenieria
+exit
+vlan 14 
+name Soporte
+exit
+vlan 111
+name nativa
+exit
+
+*********Acceso***************
+int fa0/4
+switchport mode access
+switchport access vlan 4
+spanning-tree bpduguard enable 
+exit
+
+int fa0/9
+switchport mode access
+switchport access vlan 9
+spanning-tree bpduguard enable 
+exit
+
+int fa0/13
+switchport mode access
+switchport access vlan 13
+spanning-tree bpduguard enable 
+exit
+
+int fa0/14
+switchport mode access
+switchport access vlan 14
+spanning-tree bpduguard enable 
+exit
+*******************************
+
+**********Truck**************
+
+// SW1
+int r gi0/1-2
+switchport mode trunk
+switchport trunk allowed vlan 4,9,13,14
+switchport nonegotiate
+switchport trunk native vlan 111
+exit
+
+int r fa0/1-2
+switchport mode trunk
+switchport trunk allowed vlan 4,9,13,14
+switchport nonegotiate
+switchport trunk native vlan 111
+exit
+
+// SW2
+int r gi0/1-2
+switchport mode trunk
+switchport trunk allowed vlan 4,9,13,14
+switchport nonegotiate
+switchport trunk native vlan 111
+exit
+
+int r fa0/3-4
+switchport mode trunk
+switchport trunk allowed vlan 4,9,13,14
+switchport nonegotiate
+switchport trunk native vlan 111
+exit
+
+// SW3
+
+int r gi0/1-2
+switchport mode trunk
+switchport trunk allowed vlan 4,9,13,14
+switchport nonegotiate
+switchport trunk native vlan 111
+exit
+
+int r fa0/1-4
+switchport mode trunk
+switchport trunk allowed vlan 4,9,13,14
+switchport nonegotiate
+switchport trunk native vlan 111
+exit
+
+// BR2 
+int gi0/1
+switchport trunk encapsulation dot1q 
+switchport mode trunk
+switchport trunk allowed vlan 4,9,13,14
+switchport nonegotiate
+switchport trunk native vlan 111
+exit
+***********************************
+
+// Configurando Enrutamiento SVI para vlan de Soporte 
+= SW1
+int vlan 13
+ip add 10.10.14.3 255.255.255.240
+no shu
+exit
+
+= SW2
+int vlan 13
+ip add 10.10.14.4 255.255.255.240
+no shu
+exit
+
+= SW3
+int vlan 13
+ip add 10.10.14.5 255.255.255.240
+no shu
+exit
+
+ip default-gateway 10.10.14.14

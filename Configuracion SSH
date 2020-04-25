@@ -1,0 +1,21 @@
+//SSH para BR1, BR2 y R-CORE
+
+ip domain-name prueba1.com
+crypto key generate rsa 
+                        :1024
+
+ip ssh version 2
+ip ssh time-out 50
+ip ssh authentication-retries 3
+username admin1 password cisco
+line vty 4
+transport input ssh
+login local
+
+// para tiempo sin uso de router: no se utilizo
+exec-timeout 1
+
+
+
+
+

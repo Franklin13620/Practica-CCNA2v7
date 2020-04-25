@@ -1,0 +1,29 @@
+== BR2 (FHRP)=================
+*Activo
+int vlan 13
+standby version 2
+standby 13 ip 10.10.13.62
+standby 13 preempt
+standby 13 priority 110
+exit
+
+int vlan 14
+standby version 2
+standby 14 ip 10.10.14.14
+standby 14 preempt
+standby 14 priority 110
+exit
+
+*Espera
+int vlan 4
+standby version 2
+standby 4 ip 10.10.4.254
+standby 4 priority 90
+exit
+
+int vlan 9
+standby version 2
+standby 9 ip 10.10.9.126
+standby 9 priority 90
+exit
+================================

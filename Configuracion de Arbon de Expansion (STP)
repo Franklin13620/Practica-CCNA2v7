@@ -1,0 +1,35 @@
+// configuracion modo de albol de espansion: en modo rapid-pvst 
+= SW3
+spanning-tree vlan 4 root primary 
+spanning-tree vlan 9 root primary 
+spanning-tree vlan 13 root primary 
+spanning-tree vlan 14 root secondary 
+
+= BR2
+spanning vlan 14 priority 24576
+spanning vlan 4 priority 28672
+spanning vlan 9 priority 28672
+spanning vlan 13 priority 28672
+*****************************************
+
+// Mejorando la convergencia
+//Switch pasa inmediantamente al estado de reenvio al iniciar el switch
+
+int fa0/4
+spanning-tree portfast
+exit
+
+int fa0/9
+spanning-tree portfast
+exit
+
+int fa0/13
+spanning-tree portfast
+exit
+
+int fa0/14
+spanning-tree portfast
+exit
+**************************
+
+

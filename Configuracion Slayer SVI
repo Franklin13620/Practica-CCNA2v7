@@ -1,0 +1,23 @@
+= BR2
+int vlan 4
+ip add 10.10.4.2 255.255.255.0
+no shu
+exit
+
+int vlan 9
+ip add 10.10.9.2 255.255.255.128
+no shu
+exit
+
+int vlan 13
+ip add 10.10.13.2 255.255.255.192
+no shu
+exit
+
+int vlan 14
+ip add 10.10.14.2 255.255.255.240
+no shu
+exit
+
+
+

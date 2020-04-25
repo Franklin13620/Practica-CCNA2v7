@@ -1,0 +1,43 @@
+//Configuraicon de etherChannels para los switch 1,2,3
+
+*****PAgP********
+= SW1: PAgP
+int r gi0/1-2
+channel-protocol pagp
+channel-group 3 mode auto
+exit
+
+= SW2: PAgP
+int r gi0/1-2
+channel-protocol pagp
+channel-group 3 mode desirable
+exit
+***************************
+
+************LACP***********
+= SW1: LACP
+int r fa0/1-2
+channel-protocol lacp
+channel-group 1 mode passive
+exit
+
+= SW3: LACP
+int r fa0/1-2
+channel-protocol lacp
+channel-group 1 mode active
+exit
+
+= SW3: LACP
+int r fa0/3-4
+channel-protocol lacp
+channel-group 2 mode active
+exit
+
+= SW2: LACP
+int r fa0/3-4
+channel-protocol lacp
+channel-group 2 mode passive
+exit
+
+
+

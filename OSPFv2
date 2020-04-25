@@ -1,0 +1,27 @@
+= BR1 
+router ospf 1
+router-id 1.1.1.1
+network 20.20.20.0 0.0.0.3 area 0
+
+network 10.10.4.0 0.0.0.255 area 0
+network 10.10.9.0 0.0.0.127 area 0
+network 10.10.13.0 0.0.0.63 area 0
+network 10.10.14.0 0.0.0.15 area 0
+
+= R-CORE
+router ospf 1
+router-id 2.2.2.2
+network 20.20.20.0 0.0.0.3 area 0
+network 20.20.20.4 0.0.0.3 area 0
+network 20.20.20.8 0.0.0.3 area 0
+*R-CORE no usa ninguna ruta estatica predeterminada hacia ISP*
+
+= BR2
+router ospf 1
+router-id 3.3.3.3
+network 20.20.20.4 0.0.0.3 area 0
+network 10.10.4.0 0.0.0.255 area 0
+network 10.10.9.0 0.0.0.127 area 0
+network 10.10.13.0 0.0.0.63 area 0
+network 10.10.14.0 0.0.0.15 area 0
+
