@@ -1,4 +1,4 @@
-// Active para la vlan
+//Ultimos hosts
 * ultima red vlan 4 = 10.10.4.254
 * ultima red vlan 9 = 10.10.9.126
 * ultima red vlan 13 = 10.10.13.62
@@ -7,30 +7,28 @@
 == BR1 (FHRP)=================
 *Activo
 int g0/0.4
-standby version 2
-standby 5 ip 10.10.4.254
-standby 5 preempt
-standby 5 priority 110
+standby 4 ip 10.10.4.254
+standby 4 preempt
+standby 4 priority 110
 exit
 
 interface g0/0.9
-standby version 2
-standby 5 ip 10.10.9.126
-standby 5 preempt
-standby 5 priority 110
+standby 9 ip 10.10.9.126
+standby 9 preempt
+standby 9 priority 110
 exit
 
 *Espera
 int g0/0.13
-standby version 2
-standby 5 ip 10.10.13.62
-standby 5 priority 90
+standby 13 ip 10.10.13.62
+standby 13 preempt
+standby 13 priority 90
 exit
 
 interface g0/0.14
-standby version 2
-standby 5 ip 10.10.14.14
-standby 5 priority 90
+standby 14 ip 10.10.14.14
+standby 14 preempt
+standby 14 priority 90
 exit
 ================================
 

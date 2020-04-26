@@ -18,12 +18,14 @@ exit
 int vlan 4
 standby version 2
 standby 4 ip 10.10.4.254
+standby 4 preempt
 standby 4 priority 90
 exit
 
 int vlan 9
 standby version 2
 standby 9 ip 10.10.9.126
+standby 9 preempt
 standby 9 priority 90
 exit
 ================================
